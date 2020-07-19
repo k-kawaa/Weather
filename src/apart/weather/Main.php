@@ -14,6 +14,7 @@ use pocketmine\utils\Config;
 class Main extends PluginBase implements Listener
 {
 	private $config;
+	private $config2;
 
 	public function onEnable()
 	{
