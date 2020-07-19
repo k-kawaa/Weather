@@ -13,14 +13,14 @@ use pocketmine\utils\Config;
 
 class Main extends PluginBase implements Listener
 {
-	private $config;
+
 	private $config2;
 
 	public function onEnable()
 	{
 
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->config = new Config($this->getDataFolder() . "world.yml", Config::YAML);
+
 		$this->config2 = new Config($this->getDataFolder() . "weather.yml", Config::YAML, array(
 			"weather" => "clear",));
 
@@ -65,7 +65,7 @@ class Main extends PluginBase implements Listener
 
 			case 'weather':
 				if (!isset($args[0])) {
-					$sender->sendMessage("§a[weatherSystem]使用方法：/weather 天気");
+					$sender->sendMessage("§a[weatherSystem]use：/weather clear|rain|thunder");
 				} elseif ($args[0] === "rain") {
 					$this->config2->set("weather", "rain");
 					$pk = new LevelEventPacket();
