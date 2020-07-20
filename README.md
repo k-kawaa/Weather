@@ -1,3 +1,3 @@
-# Weather
-[![Poggit](https://poggit.pmmp.io/ci.shield/Apartkktrain/Weather)](https://poggit.pmmp.io/ci/Apartkktrain/Weather)
+# Weather  
+<a href="https://poggit.pmmp.io/p/weather"><img src="https://poggit.pmmp.io/shield.state/weather"></a>  
 Server add weather!!
