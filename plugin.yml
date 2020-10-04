@@ -1,5 +1,5 @@
 name: weather
-version: 1.0.0
+version: 1.5.0
 main: apart\weather\Main
 api: 3.14.0
 
