@@ -2,11 +2,11 @@ name: weather
 version: 1.5.0
 main: apart\weather\Main
 api: 3.14.0
+author: Apartkktrain
 
 commands:
-
-weather:
-  description: 天気を変更します。
-  usage: /weather
+  weather:
+    description: change the weather
+    usage: /weather
 
   
