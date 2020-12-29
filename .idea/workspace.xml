@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03f0ee59-3575-41f3-8f06-ccbf3564ee04" name="デフォルト変更リスト" comment="">
-      <change beforePath="$PROJECT_DIR$/Weather/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weather/plugin.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apart/weather/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apart/weather/Main.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +41,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609205225079</updated>
-      <workItem from="1609205229381" duration="93000" />
+      <workItem from="1609205229381" duration="499000" />
     </task>
     <servers />
   </component>

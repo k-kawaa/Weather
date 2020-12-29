@@ -59,48 +59,50 @@ class Main extends PluginBase implements Listener
 			return true;
 		}
 
-		$name = $sender->getName();
-
 		switch ($label) {
 
 			case 'weather':
-				if (!isset($args[0])) {
-					$sender->sendMessage("§a[weatherSystem]use：/weather clear|rain|thunder");
-				} elseif ($args[0] === "rain") {
-					$this->config2->set("weather", "rain");
-					$pk = new LevelEventPacket();
-					$pk->position = $sender;
-					$pk->data = 110000;
-					$pk->evid = LevelEventPacket::EVENT_START_RAIN;
-					$sender->dataPacket($pk);
-				} elseif ($args[0] === "thunder") {
-					$this->config2->set("weather", "thunder");
-					$pk = new LevelEventPacket();
-					$pk->position = $sender;
-					$pk->data = 40000;
-					$pk->evid = LevelEventPacket::EVENT_START_RAIN;
-				} elseif ($args[0] === "clear") {
-					if ($data === "clear") {
-						# code...
-					}
-					if ($data === "rain") {
+				if ($sender->isOp()) {
+					if (!isset($args[0])) {
+						$sender->sendMessage("§a[weatherSystem] usage：/weather clear|rain|thunder");
+					} elseif ($args[0] === "rain") {
+						$this->config2->set("weather", "rain");
 						$pk = new LevelEventPacket();
 						$pk->position = $sender;
 						$pk->data = 110000;
-						$pk->evid = LevelEventPacket::EVENT_STOP_RAIN;
+						$pk->evid = LevelEventPacket::EVENT_START_RAIN;
 						$sender->dataPacket($pk);
-						$this->config2->set("weather", "clear");
-						return true;
-					}
-					if ($data === "thunder") {
+					} elseif ($args[0] === "thunder") {
+						$this->config2->set("weather", "thunder");
 						$pk = new LevelEventPacket();
 						$pk->position = $sender;
 						$pk->data = 40000;
-						$pk->evid = LevelEventPacket::EVENT_STOP_RAIN;
-						$sender->dataPacket($pk);
-						$this->config2->set("weather", "clear");
-						return true;
+						$pk->evid = LevelEventPacket::EVENT_START_RAIN;
+					} elseif ($args[0] === "clear") {
+						if ($data === "clear") {
+							# code...
+						}
+						if ($data === "rain") {
+							$pk = new LevelEventPacket();
+							$pk->position = $sender;
+							$pk->data = 110000;
+							$pk->evid = LevelEventPacket::EVENT_STOP_RAIN;
+							$sender->dataPacket($pk);
+							$this->config2->set("weather", "clear");
+							return true;
+						}
+						if ($data === "thunder") {
+							$pk = new LevelEventPacket();
+							$pk->position = $sender;
+							$pk->data = 40000;
+							$pk->evid = LevelEventPacket::EVENT_STOP_RAIN;
+							$sender->dataPacket($pk);
+							$this->config2->set("weather", "clear");
+							return true;
+						}
 					}
+				}else{
+					$sender->sendMessage("§4このコマンドを実行する権限がありません。");
 				}
 				break;
 
